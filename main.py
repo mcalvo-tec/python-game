@@ -15,8 +15,15 @@ def main():
     partida = Partida(3, 3)
     #partida.print_matriz_1()
     #partida.print_matriz_2()
-    partida.print_matriz_resultado()
+    #partida.print_matriz_resultado()
+    #partida._matrizResultado.define_elem(0,0,1)
+    #partida._matrizResultado.define_elem(1,1,2)
+    #partida._matrizResultado.define_elem(2,2,1)
+    partida.play()
     partida.save_game()
+    partida.load_game()
+
+    #partida.print_matriz_resultado()
 
 if __name__ == "__main__":
     main()

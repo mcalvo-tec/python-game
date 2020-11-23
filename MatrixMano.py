@@ -37,7 +37,7 @@ class MatrixMano(Matrix):
         """Imprime en pantalla la matriz"""
         for i in range(self._n):
             for j in range(self._m):
-                print("| {0} ".format(self.get_value_of_position(i, j).value), sep=',', end='')
+                print("| {0} ".format(str(self.get_value_of_position(i, j).value) + " - " + self.get_value_of_position(i, j).symbol), sep=',', end='')
             print('|\n')
 
     def get_value_of_position(self, i, j):

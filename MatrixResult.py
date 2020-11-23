@@ -26,7 +26,10 @@ class MatrixResult(Matrix):
     def crear_matriz(self, fil, col):
         """Función para crear una matriz de fil FILAS y col COLUMNAS"""
         for i in range(fil):
-            self._matriz.append(self.crear_arreglo(col)) 
+            self._matriz.append(self.crear_arreglo(col))
+
+    def appendToMatriz(self, array):
+        self._matriz.append([array]) 
 
     def define_elem(self, i, j, v):
         """Sobreescribe el valor de una celda"""
