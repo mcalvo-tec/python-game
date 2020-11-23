@@ -1,10 +1,10 @@
 class Matrix:
     _n = 0
     _m = 0
-    _elems = None
+    _matriz = None
  
     def __init__(self, n, m):
-        """Inicializa la matriz con valor 0 en cada posición"""
+        """Constructor clase base"""
  
     def get_cols(self):
         """ Devuelve el número de columnas en la matriz """

@@ -12,20 +12,20 @@ class MatrixMano(Matrix):
        """Constructor de clase MatrixMano"""
        self._n = _n
        self._m = _m
-       self._elems = []
+       self._matriz = []
        
        # Inicializa la matriz de objetos Mano
        for i in range(self._n):
-            self._elems.append([])
+            self._matriz.append([])
             for j in range(self._m):
                 rand_value = random.randint(0, 10) # random inclusivo del 0-10
-                mano = Mano(rand_value, self.setSymbol(rand_value))
-                self._elems[i].append(mano)
+                mano = Mano(rand_value, self.set_symbol(rand_value))
+                self._matriz[i].append(mano)
 
        # Invoca al constructor de clase Matrix
        Matrix.__init__(self, _n, _m)
 
-    def setSymbol(self, value):
+    def set_symbol(self, value):
         """Define el simbolo con respecto al enteri value"""
         if value >= 0 and value <= 3:
             return 'P' # Piedra
@@ -42,4 +42,4 @@ class MatrixMano(Matrix):
 
     def get_value_of_position(self, i, j):
         """Obtiene el objeto en la posicion [i,j]"""
-        return self._elems[i][j]
+        return self._matriz[i][j]
