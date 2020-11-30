@@ -6,7 +6,6 @@ class Menu:
   _userCols = 0
   _minSize = 0
   _maxSize = 0
-  _canContinue = False
   _exit = False
   _initGame = False
   _game = None
@@ -17,7 +16,6 @@ class Menu:
     self._userCols = 0
     self._minSize = 5 
     self._maxSize = 10
-    self._canContinue = False
     self._exit = False
     self._initGame = False
 

@@ -13,14 +13,14 @@ class Matrix:
     def setCols(self, cols):
         self._m = cols
  
-    def get_cols(self):
+    def getCols(self):
         """ Devuelve el número de columnas en la matriz """
         return self._m
  
-    def get_rows(self):
+    def getRows(self):
         """ Devuelve el número de filas en la matriz """
         return self._n
  
-    cols = property(fget=get_cols)
-    rows = property(fget=get_rows)
+    cols = property(fget=getCols)
+    rows = property(fget=getRows)
 
