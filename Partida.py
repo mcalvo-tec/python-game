@@ -42,7 +42,6 @@ class Partida:
         self._matriz2.print_matrix()
         print("***** Fin Matriz 2 *****\n")
     
-
     def print_matriz_resultado(self):
         """Funcion que imprime la matriz_1 tipo objeto mano"""
         print("*****   Matriz Resultado   *****")
@@ -99,8 +98,7 @@ class Partida:
 
                         line_count += 1
                         i += 1
-                print(f'** Lectura finalizada, lineas leidas de archivo: {line_count-1}\n')
-                print("** Cargando ultima partida ...\n")
+                print("\n** Cargando ultima partida ...\n")
                 saveGameMatriz._matriz = result
                 saveGameMatriz.print_matrix()
                 print("** Partida cargada!\n")
@@ -152,20 +150,22 @@ class Partida:
         self.print_matriz_1()
         self.print_matriz_2()
         print("\n*** Iniciando partida ...\n")
-        print("\n*** Determinando ganador ...\n")
+        print("*** Determinando ganador ...\n")
         for i in range(self._rows):
             for j in range(self._cols):
-                symbol1 = self._matriz1.get_value_of_position(i, j).symbol
-                symbol2 = self._matriz2.get_value_of_position(i, j).symbol
+                symbol1 = self._matriz1.get_value_of_position(i, j).getSimbolo()
+                symbol2 = self._matriz2.get_value_of_position(i, j).getSimbolo()
                 posResult = self.set_winner(symbol1, symbol2)
                 # Actualizar contadores segun resultado de ganador
                 self.updateCounters(posResult)
                 self._matrizResultado.define_elem(i,j, posResult)
 
-        print(" --- Resultados Finales --- ")
+        print(" ---   Resultados Finales   --- ")
         print(f'  *) Victorias Matriz 1: {self._victoriasMatriz1}')
         print(f'  *) Victorias Matriz 2: {self._victoriasMatriz2}')
-        print(f'  *) Empates: {self._empates}')
+        print(f'  *) Empates: {self._empates}\n')
+        print(" --- FIN Resultados Finales --- \n")
+
         print(" \n ------- GANADOR ------- \n")
         
         if(self._victoriasMatriz1 == self._victoriasMatriz2):
@@ -176,6 +176,9 @@ class Partida:
             print(" *** MATRIZ_2 ***\n")
         
         print(" ----- FIN GANADOR ----- \n")
+
+        self.print_matriz_resultado()
+
         print("\n*** FIN de la partida ***\n")
 
 

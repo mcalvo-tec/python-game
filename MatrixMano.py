@@ -35,10 +35,14 @@ class MatrixMano(Matrix):
     
     def print_matrix(self):
         """Imprime en pantalla la matriz"""
+        value = 0
+        strValue = ""
         for i in range(self._n):
             for j in range(self._m):
-                print("| {0} ".format(str(self.get_value_of_position(i, j).value) + " - " + self.get_value_of_position(i, j).symbol), sep=',', end='')
-            print('|\n')
+                value = self.get_value_of_position(i, j).getValor()
+                strValue = " " + str(value) if value != 10 else str(value)
+                print("\t {0} ".format(strValue + "-" + self.get_value_of_position(i, j).getSimbolo()), sep=',', end='')
+            print('\n')
 
     def get_value_of_position(self, i, j):
         """Obtiene el objeto en la posicion [i,j]"""
